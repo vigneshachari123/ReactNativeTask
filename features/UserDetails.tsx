@@ -25,6 +25,7 @@ const styeles = StyleSheet.create({
   },
   textContainer: {
     fontWeight: 'bold',
+    marginLeft: 18,
     fontSize: 20,
     color: '#ffffff',
   },

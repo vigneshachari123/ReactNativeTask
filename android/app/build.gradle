@@ -1,4 +1,6 @@
 apply plugin: "com.android.application"
+//vector 
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile
 
@@ -260,6 +262,8 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    //vector icons
+    implementation project(':react-native-vector-icons')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
@@ -318,3 +322,6 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+
+
+//vector icons

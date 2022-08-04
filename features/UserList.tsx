@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {useSnapshot} from 'valtio';
 import {UserManager} from '../manager/UserManager';
-import {User} from '../model';
+import {Colors} from '../styles/Color';
 import {UserState} from './../store/Index';
 import UserItem from './UserItems';
 
@@ -15,27 +15,31 @@ function UserList() {
 
   const LoadAllUsers = async () => {
     await UserManager.getAllUsers();
-    console.log(`load all `);
   };
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={users}
-        keyExtractor={(item, index) => String(index)}
-        renderItem={userData => <UserItem userData={userData} />}
-        //renderItem={itemData => <Text>{itemData.item.name}</Text>}
-      />
+      <View style={styles.FlatListContainer}>
+        <FlatList
+          data={users}
+          keyExtractor={(item, index) => String(index)}
+          renderItem={userData => <UserItem userData={userData} />}
+          //renderItem={itemData => <Text>{itemData.item.name}</Text>}
+        />
+      </View>
     </View>
-    // <View>
-    //   <Text>{users.length}</Text>
-    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: '#E2E71A',
+    flex: 1,
+    backgroundColor: Colors.select.primary200,
+  },
+
+  FlatListContainer: {
+    marginTop: 45,
+    marginHorizontal: 15,
   },
 });
 

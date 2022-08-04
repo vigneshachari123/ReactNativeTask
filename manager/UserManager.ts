@@ -12,8 +12,6 @@ static getAllUsers =  async () => {
 static getUserById =  async (id:number) => {
     const user = await UserService.getUserById(id);
     StateManager.SetUserDetails(user)
-
-
 }
 
 }

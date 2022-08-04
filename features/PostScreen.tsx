@@ -20,12 +20,12 @@ function PostScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    //  backgroundColor: '#1AE73F',
     marginTop: 20,
   },
   textContainer: {
     padding: 5,
-    margin: 5,
+    margin: 10,
+    elevation: 10,
     borderRadius: 10,
     backgroundColor: Colors.select.primary100,
   },
